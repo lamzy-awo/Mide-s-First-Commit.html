@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <input type="text">
+    <button onclick="change()">Change</button>
+    <button onclick="red()">Red</button>
+    <button onclick="blue()">Blue</button>
+    <button onclick="green()">Green</button>
+    <button onclick="color()">color</button>
+    
+
+
+<script>
+    alert("Hello💕")
+
+    function change(){
+        if(document.querySelector("h1").innerHTML === "Welcome"){
+            document.querySelector("h1").innerHTML = "Hello"
+        } else{
+            document.querySelector("h1").innerHTML = "Welcome"
+        }
+    }
+
+    function greet(name){
+        console.log("Good Morning "+name)
+    }
+    greet("Olamide")
+
+    function red(){
+        document.querySelector("h1").style.color = "red"
+    }
+
+    function blue(){
+        document.querySelector("h1").style.color = "blue"
+    }
+
+    function green(){
+        document.querySelector("h1").style.color = "green"
+    }
+
+    function color(){
+        var value = document.querySelector("input").value
+        if(value === "pink"){
+            document.querySelector("h1").style.color = "pink"
+        } 
+        else if(value === "green"){
+            document.querySelector("h1").style.color = "green"
+        }
+        else if(value === "purple"){
+            document.querySelector("h1").style.color = "purple"
+        }
+        else{
+            document.querySelector("h1").style.color = "black"        
+        }
+    }
+
+
+   
+
+</script>
+   </body>
+</html>

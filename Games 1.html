@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Score <span id="score">0</span></h2>
+    <h2>User Choice <span id="userChoice"></span></h2>
+    <h2>Computer Choice <span id="computerChoice"></span></h2>
+    <h2>Result <span id="result"></span></h2>
+
+    <button id="Rock">Rock</button>
+    <button id="Paper">Paper</button>
+    <button id="Scissors">Scissors</button>
+
+
+    <script>
+        alert("We are all WINNERS👌💕")
+
+        const userChoiceDisplay = document.querySelector("#userChoice")
+        const computerChoiceDisplay = document.querySelector("#computerChoice")
+        const resultDisplay = document.querySelector("#result")
+        const possibleButton = document.querySelectorAll("button")
+        const scoreDisplay = document.querySelector("#score")
+
+        let userChoice
+        let computerChoice
+        let result
+        let score
+
+        possibleButton.forEach(possibleButton => possibleButton.addEventListener("click", (e) => {
+            userChoice = e.target.id
+            userChoiceDisplay.innerHTML = userChoice;
+
+            randomFunction()
+            resultFunction()
+            scoreFunction()
+        }))
+
+        function randomFunction(){
+            randomNumber = Math.floor(Math.random(3)*3) +1
+            console.log(randomNumber)
+
+            if (randomNumber === 1){
+                computerChoice = "Rock"
+            }
+            if (randomNumber === 2){
+                computerChoice = "Paper"
+            }
+            if (randomNumber === 3){
+                computerChoice = "Scissors"
+            }
+
+            computerChoiceDisplay.innerHTML = computerChoice
+        }
+
+        function resultFunction(){
+            if(userChoice === "Rock" && computerChoice === "Scissor"){
+                result = "You Win"
+            }
+
+            if(userChoice === "Scissors" && computerChoice === "Rock"){
+                result = "You Lose"
+            }
+
+            if(userChoice === "Paper" && computerChoice === "Scissors"){
+                result = "You Lose"
+            }
+
+            if(userChoice === "Scissors" && computerChoice === "Paper"){
+                result = "You Win"
+            }
+
+            if(userChoice === "Rock" && computerChoice === "Paper"){
+                result = "You Lose"
+            }
+
+            if(userChoice === "Paper" && computerChoice === "Rock"){
+                result = "You Win"
+            }
+            if(userChoice === computerChoice){
+                result = "You Draw"
+            }
+            resultDisplay.innerHTML = result
+        
+        }
+
+        let name = document.querySelector("#score").value
+        let value = 0
+
+        function scoreFunction(){
+            if(result === "You Win"){
+                score = (value ++)
+            }
+            if(result === "You Lose"){
+                score = (value --)
+            }
+            if(result === "You Draw"){
+                score = (value )
+            }
+            scoreDisplay.innerHTML = score
+        }
+
+
+        
+
+
+    </script>
+</body>
+</html>
