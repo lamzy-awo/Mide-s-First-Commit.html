@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (min-width: 600px){
+            body{
+                background-color: aqua;
+            }
+        }
+        @media (max-width: 599px){
+            body{
+                background-color: gold;
+            }
+        }
+        .head{
+            background-color: orangered;
+            position: sticky;
+            top: 0px;
+            text-align: center;
+        }
+        .chat{
+            background-color: orangered;
+            border-radius: 5px;
+            bottom: 10px;
+            position: fixed;
+            font-size: 2rem;
+            right: 10px;
+            width: 90px;
+            height: 50px;
+        }
+        .text1{ grid-area: header;}
+        .text2{ grid-area: menu;}
+        .text3{ grid-area: main;}
+        .text4{ grid-area: right;}
+        .text5{ grid-area: footer;}
+
+        #grid{
+            display: grid;
+            background-color: black;
+            grid-template-areas:
+            'header header header header header header '
+            'menu main main main right right'
+            'menu footer footer footer footer footer'
+            ;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        #grid > div{
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .chat:hover{
+            background-color: brown;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Responsive Design</h1>
+    </div>
+    <div id="grid">
+        <div class="text1">Header</div>
+        <div class="text2">Main</div>
+        <div class="text3">Menu</div>
+        <div class="text4">Right</div>
+        <div class="text5">Footer</div>
+    </div>
+     <button class="chat">Chat</button>
+</body>
+</html>
